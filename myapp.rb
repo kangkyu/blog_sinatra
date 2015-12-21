@@ -1,5 +1,5 @@
 require 'sinatra'
 
 get '/' do
-  'Blog built with Sinatra'
+  erb :index
 end
