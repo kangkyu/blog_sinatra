@@ -1,6 +1,6 @@
 ```sh
 gem install sinatra
-ruby myapp.rb
+rackup
 ```
 
 ### Readme-Driven Steps

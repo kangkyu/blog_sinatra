@@ -1,13 +1,19 @@
 require 'sinatra'
 
-get '/' do
-  redirect to('/posts')
-end
+module Blog
+  class App < Sinatra::Application
 
-get '/posts' do
-  erb :index
-end
+    get '/' do
+      redirect to('/posts')
+    end
 
-get '/posts/:id' do
-  params[:id]
+    get '/posts' do
+      erb :index
+    end
+
+    get '/posts/:id' do
+      params[:id]
+    end
+
+  end
 end
