@@ -1,1 +1,9 @@
 <p>'Blog built with Sinatra'</p>
+
+<ul>
+<% @posts.each do |post| %>
+  <li><%= post %></li>
+<% end %>
+</ul>
+
+<a href="/posts/new">Add a Post</a>
