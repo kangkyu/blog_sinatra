@@ -1,7 +1,11 @@
 require 'sinatra'
+require 'rack-flash'
 
 module Blog
   class App < Sinatra::Application
+
+    enable :sessions
+    use Rack::Flash
 
     get '/' do
       redirect to('/posts')
@@ -25,6 +29,7 @@ module Blog
       File.open('posts', 'a') do |file|
         file.puts "#{params[:new_post]}"
       end
+      flash[:notice] = "Post added"
       redirect '/posts'
     end
 

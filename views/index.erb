@@ -1,5 +1,6 @@
-<p>'Blog built with Sinatra'</p>
+<h1>'Blog built with Sinatra'</h1>
 
+<p><%= flash[:notice] %></p>
 <ul>
 <% @posts.each do |post| %>
   <li><%= post %></li>

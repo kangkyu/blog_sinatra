@@ -1,6 +1,7 @@
 ```sh
-gem install sinatra
-rackup
+gem install bundler # if not done yet
+bundle install
+rerun 'rackup'
 ```
 
 ### Readme-Driven Steps
