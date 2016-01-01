@@ -9,6 +9,11 @@ module Blog
 
     get '/posts' do
       @posts = ['Hello world', 'Look here']
+      File.open('posts', 'r') do |file|
+        file.readlines.each do |line|
+          @posts.push(line.chomp)
+        end
+      end
       erb :index
     end
 
@@ -17,8 +22,9 @@ module Blog
     end
 
     post '/posts' do
-      params[:new_post]
-
+      File.open('posts', 'a') do |file|
+        file.puts "#{params[:new_post]}"
+      end
       redirect '/posts'
     end
 
