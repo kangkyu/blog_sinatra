@@ -1,3 +1,5 @@
+### Run local server
+
 ```sh
 gem install bundler # if not done yet
 bundle install
@@ -6,5 +8,8 @@ rerun 'rackup'
 
 ### Readme-Driven Steps
 
-+ save data as text files.
-+ index and create
++ <del>save data as text files.</del>
++ <del>index and create</del>
++ edit
++ delete
++ style
