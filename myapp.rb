@@ -7,13 +7,15 @@ module Blog
     enable :sessions
     use Rack::Flash
 
+    POST_FILE = 'posts'
+
     get '/' do
       redirect to('/posts')
     end
 
     get '/posts' do
-      @posts = ['Hello world', 'Look here']
-      File.open('posts', 'r') do |file|
+      @posts = []
+      File.open(POST_FILE, 'r') do |file|
         file.readlines.each do |line|
           @posts.push(line.chomp)
         end
@@ -26,7 +28,7 @@ module Blog
     end
 
     post '/posts' do
-      File.open('posts', 'a') do |file|
+      File.open(POST_FILE, 'a') do |file|
         file.puts "#{params[:new_post]}"
       end
       flash[:notice] = "Post added"
