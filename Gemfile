@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '2.2.4'
+ruby '2.2.5'
 
-gem 'sinatra'
+gem 'sinatra', '~> 1.4.6'
 gem 'rack-flash3'
 
 group 'development' do

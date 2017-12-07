@@ -15,10 +15,13 @@ module Blog
 
     get '/posts' do
       @posts = []
-      File.open(POST_FILE, 'r') do |file|
-        file.readlines.each do |line|
-          @posts.push(line.chomp)
+      begin
+        File.open(POST_FILE, 'r') do |file|
+          file.readlines.each do |line|
+            @posts.push(line.chomp)
+          end
         end
+      rescue Errno::ENOENT
       end
       erb :index
     end
